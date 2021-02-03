@@ -141,13 +141,13 @@ function gameLoop(diff) {
 	document.getElementById("floor").textContent = gfe(player.floor)
 	document.getElementById("enemyhp").textContent = f(player.enemyhp)+"/"+f(getTotalEnemyHP())
 	document.getElementById("gold").textContent = f(player.gold)
-	document.getElementById("nextRoom").textContent = canContinue() ? "Next Room" : "Attack!"
+	document.getElementById("nextRoom").textContent = canContinue() ? "前往下一个房间" : "攻击！"
 	for (i=1;i<=UPGS.num;i++) {
 		document.getElementById("upg"+i).className = "longbtn"+(player.gold.gte(getUpgCost(i))?"":" locked")
 		document.getElementById("upg"+i+"cost").textContent = f(getUpgCost(i))
 	}
 	document.getElementById("nextFloor").className = "longbtn"+(canAscend()?"":" locked")
-	document.getElementById("nextFloor").textContent = "Next Floor"+(canAscend()?"":(" (Req: Room "+f(getAscendReq())+")"))
+	document.getElementById("nextFloor").textContent = "前往下一层"+(canAscend()?"":("（需要到达第 "+f(getAscendReq())+" 个房间）"))
 	document.getElementById("prevFloor").style.display = player.floor.gt(0)?"":"none"
 	document.getElementById("floor1upgs").style.display = player.totalFloor.gte(1) ? "" : "none"
 	document.getElementById("floor2upgs").style.display = player.totalFloor.gte(2) ? "" : "none"

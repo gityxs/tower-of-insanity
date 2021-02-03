@@ -49,7 +49,7 @@ const ASCEND_REQ = new ExpantaNum(35)
 const TABS = {
 	nursery: {
 		display() { return true },
-		text: "Reach Floor 4 to unlock The Nursery.",
+		text: "到达第四层以解锁育儿室。",
 		unl() { return player.totalFloor.gte(4) },
 	},
 }
