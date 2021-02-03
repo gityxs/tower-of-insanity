@@ -275,7 +275,7 @@ function gameLoop(diff) {
 		document.getElementById("nursery"+i).className = "longbtn2"+(player.nursery.upgrades.includes(i) ? " bought" : (player.nursery.adults.gte(cost) ? "" : " locked"))
 		document.getElementById("nursery"+i+"cost").textContent = f(cost)
 	}
-	document.getElementById("nursery6desc").textContent = hasNurseryUpg(6)?" and Gold gain":""
+	document.getElementById("nursery6desc").textContent = hasNurseryUpg(6)?"的同时，金币的获得量提高":""
 }
 
 function showTab(x) {
