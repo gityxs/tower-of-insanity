@@ -5,74 +5,74 @@
 	<script type="text/javascript" src="js/constants.js"></script>
 	<script type="text/javascript" src="js/format.js"></script>
 	<script type="text/javascript" src="js/game.js"></script>
-	<title>Tower of Insanity</title>
+	<title>狂人之塔</title>
 </head>
 <body onload="load()" style="background-color:grey; color:white; margin: auto; text-align: center;">
-	<button onclick="save()">Save Game</button><br>
+	<button onclick="save()">手动保存游戏（不能自动保存）</button><br>
 	<div id="tablist" class="column">
 		<br>
-		<button onclick="showTab('main')">Tower</button><br>
-		<button id="nurserytabbtn" onclick="showTab('nursery')">Nursery</button>
+		<button onclick="showTab('main')">塔</button><br>
+		<button id="nurserytabbtn" onclick="showTab('nursery')">育儿室</button>
 	</div>
 	<div id="main" class="tab">
-		You are in Room <span id="room"></span> of Floor <span id="floor"></span>.<br><br>
-		Enemy HP: <span id="enemyhp"></span>.<br>
-		Gold: <span id="gold"></span>.<br><br>
-		<button id="nextRoom" class="longbtn" onclick="action()">Next Room</button><br>
-		<button id="nextFloor" class="longbtn" onclick="nextFloor()">Next Floor</button><br>
-		<button id="prevFloor" class="longbtn" onclick="prevFloor()">Previous Floor</button><br><br><br>
-		<button id="upg1" class="longbtn locked" onclick="buyUpg(1)">Multiply your damage by <span id="upg1eff">3</span>.<br>Cost: <span id="upg1cost"></span> Gold.</button>
-		<button id="upg2" class="longbtn locked" onclick="buyUpg(2)">Multiply Gold gain by <span id="upg2eff">2</span>.<br>Cost: <span id="upg2cost"></span> Gold.</button><br>
+		你在第 <span id="floor"></span> 层的第 <span id="room"></span> 个房间。<br><br>
+		敌人血量： <span id="enemyhp"></span>.<br>
+		金币： <span id="gold"></span>.<br><br>
+		<button id="nextRoom" class="longbtn" onclick="action()">前往下一个房间</button><br>
+		<button id="nextFloor" class="longbtn" onclick="nextFloor()">前往下一层</button><br>
+		<button id="prevFloor" class="longbtn" onclick="prevFloor()">前往上一层</button><br><br><br>
+		<button id="upg1" class="longbtn locked" onclick="buyUpg(1)">伤害提高 <span id="upg1eff">3</span> 倍。<br>价格： <span id="upg1cost"></span> 金币。</button>
+		<button id="upg2" class="longbtn locked" onclick="buyUpg(2)">金币获得的数量提高 <span id="upg2eff">2</span> 倍。<br>价格： <span id="upg2cost"></span> 金币。</button><br>
 		<div id="floor1upgs">
-			<button id="upg3" class="longbtn locked" onclick="buyUpg(3)">Same as above, but persists through floors.<br>Cost: <span id="upg3cost"></span> Gold.</button>
-			<button id="upg4" class="longbtn locked" onclick="buyUpg(4)">Same as above, but persists through floors.<br>Cost: <span id="upg4cost"></span> Gold.</button><br>
-			<button id="upg5" class="longbtn locked" onclick="buyUpg(5)">Divide all previous upgrade costs by <span id="upg5eff">10</span>.<br>Cost: <span id="upg5cost"></span> Gold.</button>
+			<button id="upg3" class="longbtn locked" onclick="buyUpg(3)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg3cost"></span> 金币。</button>
+			<button id="upg4" class="longbtn locked" onclick="buyUpg(4)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg4cost"></span> 金币。</button><br>
+			<button id="upg5" class="longbtn locked" onclick="buyUpg(5)">以上所有升级的价格除以 <span id="upg5eff">10</span>.<br>价格： <span id="upg5cost"></span> 金币。</button>
 		</div>
 		<div id="floor2upgs">
-			<button id="upg6" class="longbtn locked" onclick="buyUpg(6)">Same as above, but persists through floors.<br>Cost: <span id="upg6cost"></span> Gold.</button><br>
-			<button id="upg7" class="longbtn locked" onclick="buyUpg(7)">Autoclick the Attack button <span id="upg7eff">5</span> times per second.<br>Cost: <span id="upg7cost"></span> Gold.</button>
-			<button id="upg8" class="longbtn locked" onclick="buyUpg(8)">Divide Enemy HP by <span id="upg8eff">10</span>.<br>Cost: <span id="upg8cost"></span> Gold.</button>
+			<button id="upg6" class="longbtn locked" onclick="buyUpg(6)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg6cost"></span> 金币。</button><br>
+			<button id="upg7" class="longbtn locked" onclick="buyUpg(7)">每秒自动点击攻击按钮 <span id="upg7eff">5</span> 次。<br>价格： <span id="upg7cost"></span> 金币。</button>
+			<button id="upg8" class="longbtn locked" onclick="buyUpg(8)">敌人血量除以 <span id="upg8eff">10</span>.<br>价格： <span id="upg8cost"></span> 金币。</button>
 		</div>
 		<div id="floor3upgs">
-			<button id="upg9" class="longbtn locked" onclick="buyUpg(9)">Same as above, but persists through floors.<br>Cost: <span id="upg9cost"></span> Gold.</button>
-			<button id="upg10" class="longbtn locked" onclick="buyUpg(10)">Same as above, but persists through floors.<br>Cost: <span id="upg10cost"></span> Gold.</button>
+			<button id="upg9" class="longbtn locked" onclick="buyUpg(9)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg9cost"></span> 金币。</button>
+			<button id="upg10" class="longbtn locked" onclick="buyUpg(10)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg10cost"></span> 金币。</button>
 		</div>
 		<div id="floor4upgs">
-			<button id="upg11" class="longbtn locked" onclick="buyUpg(11)">All above upgrades are slightly stronger.<br>Cost: <span id="upg11cost"></span> Gold.</button>
+			<button id="upg11" class="longbtn locked" onclick="buyUpg(11)">轻微提升以上升级的效果。<br>价格： <span id="upg11cost"></span> 金币。</button>
 		</div>
 		<div id="floor5upgs">
-			<button id="upg12" class="longbtn locked" onclick="buyUpg(12)">Same as above, but persists through floors.<br>Cost: <span id="upg12cost"></span> Gold.</button>
+			<button id="upg12" class="longbtn locked" onclick="buyUpg(12)">效果和上面的升级相同，但在爬塔时保持。<br>价格： <span id="upg12cost"></span> 金币。</button>
 		</div>
 		<div id="floor6upgs">
-			<button id="upg13" class="longbtn locked" onclick="buyUpg(13)">Auto-max all above upgrades 2 times per second (persists through floors).<br>Cost: <span id="upg13cost"></span> Gold.</button>
-			<button id="upg14" class="longbtn locked" onclick="buyUpg(14)">Add 0.1 to the Adult effect exponent.<br>Cost: <span id="upg14cost"></span> Gold.</button><br>
+			<button id="upg13" class="longbtn locked" onclick="buyUpg(13)">按最大数量自动购买升级，每秒 2 次，在爬塔时保持。<br>价格： <span id="upg13cost"></span> 金币。</button>
+			<button id="upg14" class="longbtn locked" onclick="buyUpg(14)">成年人加成效果公式的指数增加0.1<br>价格： <span id="upg14cost"></span> 金币。</button><br>
 		</div>
 	</div>
 	<div id="nursery" class="tab">
 		<div class="column">
-			There are <span id="adults"></span> adults, which multiply your damage<span id="nursery6desc"></span> by <span id="adultDmg"></span>.<br><br>
-			<button id="hireAdult" class="longbtn2 locked" onclick="hireAdult()">+1 Adult<br>Cost: <span id="hireAdultCost"></span> Gold.</button><br><br>
-			<button id="nursery1" class="longbtn2 locked" onclick="buyNurseryUpg(1)">Adults create babies 10x faster.<br>Cost: <span id="nursery1cost"></span> Adults.</button><br><br>
-			<button id="nursery5" class="longbtn2 locked" onclick="buyNurseryUpg(5)">Adults create babies 2% faster for every Room you've reached.<br>Cost: <span id="nursery5cost"></span> Adults.</button><br><br>
-			<button id="nursery9" class="longbtn2 locked" onclick="buyNurseryUpg(9)">Adults create babies 150% faster for every Floor you've reached.<br>Cost: <span id="nursery9cost"></span> Adults.</button>
+			你有 <span id="adults"></span> 个成年人，<br>伤害提高<span id="nursery6desc"></span><span id="adultDmg"></span>倍。<br><br>
+			<button id="hireAdult" class="longbtn2 locked" onclick="hireAdult()">雇用 1 个成年人。<br>价格： <span id="hireAdultCost"></span> 金币。</button><br><br>
+			<button id="nursery1" class="longbtn2 locked" onclick="buyNurseryUpg(1)">成年人创造婴儿的速度加快 10 倍。<br>价格： <span id="nursery1cost"></span> 成年人。</button><br><br>
+			<button id="nursery5" class="longbtn2 locked" onclick="buyNurseryUpg(5)">每到达一个房间，成年人创造婴儿的速度加快2%.<br>价格： <span id="nursery5cost"></span> 成年人。</button><br><br>
+			<button id="nursery9" class="longbtn2 locked" onclick="buyNurseryUpg(9)">每爬一层塔，成年人创造婴儿的速度加快150%.<br>价格： <span id="nursery9cost"></span> 成年人。</button>
 		</div>
 		<div class="column">
-			There are <span id="babies"></span> babies, which grow into children in <span id="babyGrowthRate"></span> each.<br><br>
-			<button id="boostBaby" class="longbtn2 locked" onclick="boostBaby()">Multiply baby growth rate by <span id="babyGrowthRateInc"></span><br>Cost: <span id="boostBabyCost"></span> Adults.</button><br><br>
-			<button id="nursery2" class="longbtn2 locked" onclick="buyNurseryUpg(2)">The Adult effect exponent is increased by 0.2.<br>Cost: <span id="nursery2cost"></span> Adults.</button><br><br>
-			<button id="nursery6" class="longbtn2 locked" onclick="buyNurseryUpg(6)">The Adult effect also affects Gold gain.<br>Cost: <span id="nursery6cost"></span> Adults.</button>
+			你有 <span id="babies"></span> 个婴儿，婴儿长大成为儿童的用时为 <span id="babyGrowthRate"></span><br><br>
+			<button id="boostBaby" class="longbtn2 locked" onclick="boostBaby()">婴儿成长的速度加快 <span id="babyGrowthRateInc"></span> 倍。<br>价格： <span id="boostBabyCost"></span> 成年人。</button><br><br>
+			<button id="nursery2" class="longbtn2 locked" onclick="buyNurseryUpg(2)">成年人加成效果公式的指数增加0.2<br>价格： <span id="nursery2cost"></span> 成年人。</button><br><br>
+			<button id="nursery6" class="longbtn2 locked" onclick="buyNurseryUpg(6)">成年人的加成效果可作用于金币的获得量。<br>价格： <span id="nursery6cost"></span> 成年人。</button>
 		</div>
 		<div class="column">
-			There are <span id="children"></span> children, which grow into teenagers in <span id="childGrowthRate"></span> each.<br><br>
-			<button id="boostChild" class="longbtn2 locked" onclick="boostChild()">Multiply child growth rate by <span id="childGrowthRateInc"></span><br>Cost: <span id="boostChildCost"></span> Adults.</button><br><br>
-			<button id="nursery3" class="longbtn2 locked" onclick="buyNurseryUpg(3)">Children grow up 10% faster for every Floor you've reached.<br>Cost: <span id="nursery3cost"></span> Adults.</button><br><br>
-			<button id="nursery7" class="longbtn2 locked" onclick="buyNurseryUpg(7)">Babies grow up 50% faster for every Adult you've bought.<br>Cost: <span id="nursery7cost"></span> Adults.</button>
+			你有 <span id="children"></span> 个儿童，儿童长大成为青少年的用时为 <span id="childGrowthRate"></span><br><br>
+			<button id="boostChild" class="longbtn2 locked" onclick="boostChild()">儿童成长的速度加快 <span id="childGrowthRateInc"></span> 倍。<br>价格： <span id="boostChildCost"></span> 成年人。</button><br><br>
+			<button id="nursery3" class="longbtn2 locked" onclick="buyNurseryUpg(3)">每爬一层塔，儿童长大的速度加快10%.<br>价格： <span id="nursery3cost"></span> 成年人。</button><br><br>
+			<button id="nursery7" class="longbtn2 locked" onclick="buyNurseryUpg(7)">每雇用一个成年人，婴儿长大的速度加快50%.<br>价格： <span id="nursery7cost"></span> 成年人。</button>
 		</div>
 		<div class="column">
-			There are <span id="teens"></span> teenagers, which grow into adults in <span id="teenGrowthRate"></span> each.<br><br>
-			<button id="boostTeen" class="longbtn2 locked" onclick="boostTeen()">Multiply teenager growth rate by <span id="teenGrowthRateInc"></span><br>Cost: <span id="boostTeenCost"></span> Adults.</button><br><br>
-			<button id="nursery4" class="longbtn2 locked" onclick="buyNurseryUpg(4)">All above upgrades cost 25x less.<br>Cost: <span id="nursery4cost"></span> Adults.</button><br><br>
-			<button id="nursery8" class="longbtn2 locked" onclick="buyNurseryUpg(8)">All "Multiply growth rate" upgrades are more effective based on their amount, which all now impact baby creation at a reduced rate.<br>Cost: <span id="nursery8cost"></span> Adults.</button>
+			你有 <span id="teens"></span> 个青少年，青少年长大成人的用时为 <span id="teenGrowthRate"></span><br><br>
+			<button id="boostTeen" class="longbtn2 locked" onclick="boostTeen()">青少年成长的速度加快 <span id="teenGrowthRateInc"></span> 倍。<br>价格： <span id="boostTeenCost"></span> 成年人。</button><br><br>
+			<button id="nursery4" class="longbtn2 locked" onclick="buyNurseryUpg(4)">以上所有升级的价格便宜 25 倍。<br>价格： <span id="nursery4cost"></span> 成年人。</button><br><br>
+			<button id="nursery8" class="longbtn2 locked" onclick="buyNurseryUpg(8)">所有“加快成长速度”的升级更为有效，效果获得基于对应种类未成年人数量的加成。这同时以较低的速度影响成年人创造婴儿的速度。<br>价格： <span id="nursery8cost"></span> 成年人。</button>
 		</div>
 	</div>
 </body>
