@@ -147,7 +147,7 @@ function gameLoop(diff) {
 		document.getElementById("upg"+i+"cost").textContent = f(getUpgCost(i))
 	}
 	document.getElementById("nextFloor").className = "longbtn"+(canAscend()?"":" locked")
-	document.getElementById("nextFloor").textContent = "前往下一层"+(canAscend()?"":("（需要到达第 "+f(getAscendReq())+" 个房间）"))
+	document.getElementById("nextFloor").textContent = "前往下一层"+(canAscend()?"":("（需要到达这一层的第 "+f(getAscendReq())+" 个房间）"))
 	document.getElementById("prevFloor").style.display = player.floor.gt(0)?"":"none"
 	document.getElementById("floor1upgs").style.display = player.totalFloor.gte(1) ? "" : "none"
 	document.getElementById("floor2upgs").style.display = player.totalFloor.gte(2) ? "" : "none"
