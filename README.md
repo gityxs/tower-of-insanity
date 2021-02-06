@@ -3,6 +3,10 @@
 # Tower-of-Insanity-zhCN
 Chinese version of [Jacorb90's Tower of Insanity](https://github.com/Jacorb90/Tower-of-Insanity)
 
+English（英语）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index-en.html](https://gsui5051.github.io/Tower-of-Insanity-zhCN/index-en.html) 
+
+中文（Chinese）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html](https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html)
+
 # Main Issues
 1. Can't autosave.
 2. Can't import and export save. Can't wipe save (HARD RESET) either.
@@ -10,6 +14,10 @@ Chinese version of [Jacorb90's Tower of Insanity](https://github.com/Jacorb90/To
 
 # 狂人之塔
 [Jacorb90 的 Tower of Insanity](https://github.com/Jacorb90/Tower-of-Insanity)汉化版
+
+English（英语）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index-en.html](https://gsui5051.github.io/Tower-of-Insanity-zhCN/index-en.html) 
+
+中文（Chinese）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html](https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html)
 
 # 主要问题
 1. 不能自动存档。
