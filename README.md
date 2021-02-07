@@ -7,6 +7,8 @@ English（英语）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index-e
 
 中文（Chinese）：[https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html](https://gsui5051.github.io/Tower-of-Insanity-zhCN/index.html)
 
+中文版备用链接：[https://gsui5051.gitee.io/tower-of-insanity-zhcn/](https://gsui5051.gitee.io/tower-of-insanity-zhcn/)
+
 # Main Issues
 1. Can't autosave.
 2. Can't import and export save. Can't wipe save (HARD RESET) either.
